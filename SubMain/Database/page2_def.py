@@ -88,6 +88,7 @@ def add_data(data_path):
             st.success("保存完了")
             df_new = df_select
 def new_data(data_path, data_path2):
+    df_new = pd.DataFrame([])
     df = pd.read_excel(data_path2)
     company_list = ["新規メーカー"]
     goods_name_list = ["新規商品名"]
@@ -132,7 +133,8 @@ def new_data(data_path, data_path2):
             goods_color = col__2.text_input("新規色番号")
         etc = st.text_input("備考")
         df_new = pd.DataFrame({"使用物件": [house], "使用箇所":[where], "使用部位":[where2], "メーカー":[company], "商品名":[goods_name], "型番":[goods_number], "色番号":[goods_color], "備考":[etc]})
-        same_def.connect(data_path, df_new)
+        # same_def.connect(data_path, df_new)
+    return df_new
 def delete_data(data_path):
     data_width = 1000
     df = pd.read_excel(data_path)
