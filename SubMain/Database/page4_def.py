@@ -30,7 +30,9 @@ def create_data(data_path):
         dictionary_year = col2.number_input("発行年数", 2020)
         dictionary_year = str(dictionary_year) + "年"
         dictionary2 = "◯"
-    else: dictionary2 = "☓"
+    else: 
+        dictionary2 = "☓"
+        dictionary_year = "ー"
     etc = st.text_input("備考")
     if st.button("新規作成"):
         df_new2 = pd.DataFrame({"メーカー":[company2], "カタログ":[dictionary2], "発行年数":[str(dictionary_year)], "備考":[etc]})
