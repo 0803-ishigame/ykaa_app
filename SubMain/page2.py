@@ -18,7 +18,7 @@ def page_2(name_ja):
     if ss["sub_state"] == "一覧":        
         page2_def.data_list(name_ja, data_path)
     if ss["sub_state"] == "新規作成":
-        df_new = page2_def.new_data(data_path, data_path2)
+        df_new = page2_def.new_data(data_path, data_path3)
         if st.button("新規作成"):
             same_def.connect(data_path, df_new)
             st.success("成功しました")
